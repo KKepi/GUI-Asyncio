@@ -51,6 +51,7 @@ funkce1()
 funkce2()
 funkce3()
 ```
+### jak spouštění probíhá
 CPU 1  
 *funkce1()* 🕐 -> *funkce1()* **+-** ✔️
 
