@@ -55,11 +55,11 @@ funkce2 🕐 -> funkce2 🕐 -> funkce2 ✔️
 
 CPU 3  
 funkce3 🕐 -> funkce3 ✔️
-| CPU1       | CPU2       | CPU3       |
-|------------|------------|------------|
-| funkce1 🕐 | funkce2 🕐 | funkce3 🕐 |
-| funkce1 ✔️ | funkce2 🕐 | funkce3 ✔️ |
-| ...        | funkce2 ✔️ | ...        |
+| kroky | CPU1       | CPU2       | CPU3       |
+|  |------------|------------|------------|
+| 1 | funkce1 🕐 | funkce2 🕐 | funkce3 🕐 |
+| 2 | funkce1 ✔️ | funkce2 🕐 | funkce3 ✔️ |
+| 3 | ...        | funkce2 ✔️ | ...        |
 
 
 **->** **spouštění** **všech** **funkcí/procedur** **najednou** **a** **snaha** **o** **dokončení** **všech** **najednou**
