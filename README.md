@@ -11,9 +11,26 @@ funkce1()
 funkce2()
 funkce3()
 ```
-# Asynchronní programování
-+ Jako první se spustí *funkce1()*
-+ Po dokončení *funkce1()* přichází na řadu *funkce2()*
-+ Po skončení *funkce2()* se spouští *funkce3()*
+# Synchronní programování 🕐 ✔️ 🔒
+*funkce1()* 🕐
+*funkce2()* 🔒
+*funkce3()* 🔒
+
+*funkce1()* ✔️
+*funkce2()* 🕐
+*funkce3()* 🔒
+
+*funkce1()* ✔️
+*funkce2()* ✔️
+*funkce3()* 🕐
+
+*funkce1()* ✔️
+*funkce2()* ✔️
+*funkce3()* ✔️
 
 **funkce1** **->** **funkce2** **->** **funkce3**
+
+# Multithreading/vícevláknové programování
+**->** **snaha** **o** **spouštění** **všech** **funkcí/procedur** **najednou**
+
+
