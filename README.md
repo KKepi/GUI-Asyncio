@@ -54,6 +54,6 @@ CPU 2
 CPU 3  
 *funkce3()* 🕐 -> *funkce3()* **+-** ✔️
 
-**->** **snaha** **o** **spouštění** **všech** **funkcí/procedur** **najednou**
+**->** **spouštění** **všech** **funkcí/procedur** **najednou** **a** **snaha** **o** **dokončení** **všech** **najednou**
 
 
