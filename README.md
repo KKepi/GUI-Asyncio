@@ -22,22 +22,28 @@ funkce3()
 # Synchronní programování
 + Funkce se spouští postupně (čekají než se vykoná předchozí)
 ### jak spouštění probíhá
+
+*zavolání funkcí*
 funkce1 🔒  
 funkce2 🔒  
 funkce3 🔒  
 
+*krok 1*
 funkce1 🕐  
 funkce2 🔒  
 funkce3 🔒  
 
+*krok 2*
 funkce1 ✔️  
 funkce2 🕐  
 funkce3 🔒  
 
+*krok 3*
 funkce1 ✔️  
 funkce2 ✔️  
 funkce3 🕐  
 
+*krok 4*
 funkce1 ✔️  
 funkce2 ✔️  
 funkce3 ✔️  
