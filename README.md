@@ -47,15 +47,6 @@ funkce3 ✔️
 # Multithreading/vícevláknové programování
 + Funkce se spouští najednou (nečekají než se vykonají ostatní)
 ### jak spouštění probíhá
-CPU 1  
-funkce1 🕐 -> funkce1 ✔️
-
-CPU 2  
-funkce2 🕐 -> funkce2 🕐 -> funkce2 ✔️
-
-CPU 3  
-funkce3 🕐 -> funkce3 ✔️
-
 | kroky | CPU1       | CPU2       | CPU3       |
 |------------|------------|------------|------------|
 | 1 | funkce1 🕐 | funkce2 🕐 | funkce3 🕐 |
