@@ -20,6 +20,7 @@ funkce1()
 funkce2()
 funkce3()
 ```
+### jak spouštění probíhá
 *funkce1()* 🔒  
 *funkce2()* 🔒  
 *funkce3()* 🔒  
