@@ -56,7 +56,7 @@ CPU 1
 *funkce1()* 🕐 -> *funkce1()* **+-** ✔️
 
 CPU 2  
-*funkce2()* 🕐 -> *funkce2()* **+-** ✔️
+*funkce2()* 🕐 -> *funkce2()* 🕐 -> *funkce2()* ✔️
 
 CPU 3  
 *funkce3()* 🕐 -> *funkce3()* **+-** ✔️
