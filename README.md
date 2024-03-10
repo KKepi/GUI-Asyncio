@@ -15,6 +15,11 @@ def funkce3():
   ....
 ```
 # Synchronní programování
+```
+funkce1()
+funkce2()
+funkce3()
+```
 *funkce1()* 🔒  
 *funkce2()* 🔒  
 *funkce3()* 🔒  
