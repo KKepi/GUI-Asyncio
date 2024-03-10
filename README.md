@@ -16,4 +16,4 @@ funkce3()
 + Po dokončení *funkce1()* přichází na řadu *funkce2()*
 + Po skončení *funkce2()* se spouští *funkce3()*
 
-**funkce1 -> funkce2 -> funkce3 **
+**funkce1** **->** **funkce2** **->** **funkce3**
