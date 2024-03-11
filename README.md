@@ -375,6 +375,6 @@ kdy použít **create_task a vlastní načasování await**:
 >+ doba stahování pro každý zdroj by měla být jiná
 >+ hromadné spuštění uskutečnětě pomocí nástroje gather()
 
-**výsledkem by měl být následující výpis v konzoli**:
+**výsledkem může být například následující výpis v konzoli**:
 ```
 ```
