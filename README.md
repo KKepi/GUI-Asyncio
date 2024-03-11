@@ -136,6 +136,8 @@ importujeme asyncio
 ```
 import asyncio
 ```
+Asynchronní programování nejčastěji využíváme při I/O operacích. Tyto operace (čekání na odpověď serveru) budeme simulovat pomocí příkazu *await asyncio.sleep(x)*, kde x představuje čas.
+
 vytvoříme asynchronní funkci  
 ```
 async def main():
