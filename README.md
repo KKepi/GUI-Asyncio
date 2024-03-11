@@ -193,7 +193,8 @@ asyncio.run(main())
 Po spuštění funkce "*main()*" jsme zjistili, že v ní existuje volný časový prostor až na konci funkce tj. po vykonání poslední operace (print("B")).  
 Následně se spustila vyplňující funkce, která ale nedoběhla celá - existuje v ní volný prostor (asyncio.sleep()) a to se hlavní funkci nelíbí.  
   
-Jestliže chceme, aby hlavní funkce na vyplňující funkci i tak počkala můžeme přidat příkaz "*await task*"
+Jestliže chceme, aby hlavní funkce na vyplňující funkci i tak počkala můžeme přidat příkaz "*await task*".  
+Tento příkaz se postará o to, aby si vyplňující funkce našla alespoň jeden prostor na spuštění - typicky na konci hlavní funkce 
 ```
 import asyncio
 
@@ -211,8 +212,46 @@ async def vyplnujici_funkce():
 asyncio.run(main())
 ```
 ### 6)
-Pořád ale neelegantně vynucujeme časový prostor a nevyužíváme "samovolné" asynchronní spouštění těchto funkcí.  
-Pojďme vytvořit scénář, kde žádne vynucování neexistuje a funkce se spouště číste vzhledem k volnému časovému prostoru.
+Názornějším scénářem nám bude situace, kde je časový prostor na spuštění alespoň části vyplňující funkce.  
+(main.sleep < vyplnujici_funkce.sleep)
+```
+import asyncio
+
+async def main():
+  task = asyncio.create_task(vyplnujici_funkce()) # připravíme funkci, která se případně spustí, aby vyplnila volný časový prostor
+  print("A")
+  await asyncio.sleep(1) # vytvoreni dostatecne velkeho casoveho prostoru pro spusteni alespoň části tasku
+  print("B")
+
+async def vyplnujici_funkce():
+  print("1")
+  await asyncio.sleep(2) # timto cekanim uz vyplnujici funkce narusuje prubeh hlavni funkce (main.sleep < vyplnujici_funkce.sleep)
+  print("2")
+
+asyncio.run(main()
+```
+### 7)
+Pojďme hlavní funkci požádat o pokračování vyplnujici funkce ve více časových prostorech tj. využití sleep() a prostoru na konci hlavní funkce.
+```
+import asyncio
+
+async def main():
+  task = asyncio.create_task(vyplnujici_funkce()) # připravíme funkci, která se případně spustí, aby vyplnila volný časový prostor
+  print("A")
+  await asyncio.sleep(1) # vytvoreni dostatecne velkeho casoveho prostoru pro spusteni alespoň části tasku
+  print("B")
+  await task # spusteni zbytku vyplnujici funkce
+
+async def vyplnujici_funkce():
+  print("1")
+  await asyncio.sleep(2) # timto cekanim uz vyplnujici funkce narusuje prubeh hlavni funkce (main.sleep < vyplnujici_funkce.sleep)
+  print("2")
+
+asyncio.run(main()
+```
+### 7)
+Pořád, ale neelegantně vynucujeme časový prostor a nevyužíváme "samovolné" asynchronní spouštění těchto funkcí.  
+Pojďme vytvořit scénář, kde žádne vynucování neexistuje a funkce se spouští číste vzhledem k volnému časovému prostoru.
 ```
 import asyncio
 
