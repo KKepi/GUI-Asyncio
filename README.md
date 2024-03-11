@@ -161,7 +161,8 @@ async def vyplnujici_funkce():
 
 asyncio.run(main())
 ```
-Zdá se vám toto jako asynchronní spuštění? - Ne. Pomocí příkazu "*await*" jsme vynutili spuštění vyplňující funkce - program ale čekal na dokončení vyplňující funkce i přesto, že se v ní nachází volný prostor (asyncio.sleep(2)). Toto vynucení je, ale velmi podobné synchronnímu programování, kde prostě během výpisu spustíme jinou funkci - tj. nevyužíváme volného prostoru (čas).
+Zdá se vám toto jako asynchronní spuštění? - Ne. Pomocí příkazu "*await*" jsme vynutili spuštění vyplňující funkce - program ale čekal na dokončení vyplňující funkce i přesto, že se v ní nachází volný prostor (asyncio.sleep(2)).   
+Toto vynucení je, ale velmi podobné synchronnímu programování, kde prostě během výpisu spustíme jinou funkci - tj. nevyužíváme volného prostoru (čas).
 
 Pojďme tedy, využívat volného prostoru v rámci času a využijme tak opravdové asynchronní programování.
 ```
