@@ -377,4 +377,10 @@ kdy použít **create_task a vlastní načasování await**:
 
 **výsledkem může být například následující výpis v konzoli**:
 ```
+Zahajuje se stahování z Zdroj 1...
+Zahajuje se stahování z Zdroj 2...
+Zahajuje se stahování z Zdroj 3...
+Stahování z Zdroj 3 dokončeno.
+Stahování z Zdroj 1 dokončeno.
+Stahování z Zdroj 2 dokončeno.
 ```
