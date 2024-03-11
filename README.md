@@ -384,3 +384,25 @@ Stahování z Zdroj 3 dokončeno.
 Stahování z Zdroj 1 dokončeno.
 Stahování z Zdroj 2 dokončeno.
 ```
+<details>
+  <summary>Řešení</summary>
+
+  ```
+  import asyncio
+  
+  async def fetch_data(source, duration):
+      print(f"Zahajuje se stahování z {source}...")
+      await asyncio.sleep(duration)
+      print(f"Stahování z {source} dokončeno.")
+  
+  async def main():
+      await asyncio.gather(
+          fetch_data("Zdroj 1", 2),
+          fetch_data("Zdroj 2", 3),
+          fetch_data("Zdroj 3", 1)
+      )
+  
+  asyncio.run(main())
+  ```
+</details>
+
