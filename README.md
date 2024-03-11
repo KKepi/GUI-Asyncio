@@ -138,10 +138,31 @@ import asyncio
 ```
 Asynchronní programování nejčastěji využíváme při I/O operacích. Tyto operace (čekání na odpověď serveru) budeme simulovat pomocí příkazu ''*await asyncio.sleep(x)*'', kde x představuje čas.
 
-vytvoříme asynchronní funkci  
+vytvoříme asynchronní funkci a spustíme ji 
 ```
 async def main():
   print("A")
+  await asyncio.sleep(1)
   print("B")
+
+asyncio.run(main())
 ```
+Prodleva mezi vypsáním "A" a "B" je znatelná. Co kdybychom tuhle prodlevu (v praxi čekání na odpoveď během které program stojí a nic nedělá) využili k vykonání jiné funkce.  pojďme tedy vytvořit další asynchronní funkci, která toto místo vyplní.
+```
+async def main():
+  print("A")
+  await vyplnujici_funkce()
+  print("B")
+
+async def vyplnujici_funkce():
+  print("1")
+  print("2")
+
+asyncio.run(main())
+```
+Zdá se vám toto jako asynchronní spuštění? - Ne. Pomocí příkazu "*await*" jsme vynutili spuštění vyplňující funkce. Toto vynucení je, ale velmi podobné synchronnímu programování, kde prostě během výpisu spustíme jinou funkci - tj. nevyužíváme volného prostoru (čas)  
+
+Pojďme tedy, využívat volného prostoru v rámci času a využijme tak opravdové asynchronní programování.
+
+
 
