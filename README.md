@@ -210,5 +210,23 @@ async def vyplnujici_funkce():
 
 asyncio.run(main())
 ```
+### 6)
+Pořád ale neelegantně vynucujeme časový prostor a nevyužíváme "samovolné" asynchronní spouštění těchto funkcí.  
+Pojďme vytvořit scénář, kde žádne vynucování neexistuje a funkce se spouště číste vzhledem k volnému časovému prostoru.
+```
+import asyncio
 
+async def main():
+  task = asyncio.create_task(vyplnujici_funkce()) # připravíme funkci, která se případně spustí, aby vyplnila volný časový prostor
+  print("A")
+  await asyncio.sleep(5) # vytvoreni dostatecne velkeho casoveho prostoru pro spusteni tasku
+  print("B")
+
+async def vyplnujici_funkce():
+  print("1")
+  await asyncio.sleep(2) # i pres vytvoreni casoveho prostoru v tasku je porad cas aby se funkce plne dokoncila
+  print("2")
+
+asyncio.run(main())
+```
 
