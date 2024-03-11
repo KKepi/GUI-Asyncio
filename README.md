@@ -107,7 +107,7 @@ funkce2 ✔️
 + funkce jsou rozdělený do určitého počtu vláken tj. jedno vlákno spouští x funkcí, druhé vlákno spouští y funkcí, ....
 + funkce se mohou spouštět paralélně (najednou)  
 + **! správa vláken a synchronizace mezi nimi**
-+ **! Společný paměťový prostor!**
++ **! společný paměťový prostor !**
 
 | kroky | CPU       | ...       |
 |------------|------------|------------|
