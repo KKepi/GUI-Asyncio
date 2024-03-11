@@ -130,3 +130,18 @@ funkce2 ✔️
 | 1 | funkce1 ▶️ | funkce2 ▶️ |
 | 2 | funkce1 ▶️ | funkce2 ▶️ |
 | 3 | funkce1 ✔️ | funkce2 ✔️ |
+
+# AsyncIO
+importujeme asyncio
+```
+import asyncio
+```
+vytvoříme asynchronní funkci  
+async def *funkce*:
+  ....
+```
+async def main():
+  print("A")
+  print("B")
+```
+
