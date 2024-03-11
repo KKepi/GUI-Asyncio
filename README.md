@@ -19,29 +19,29 @@ funkce1()
 funkce2()
 funkce3()
 ```
-# Synchronní programování
-+ Funkce se spouští postupně (čekají než se vykoná předchozí)
-### jak spouštění probíhá
-
+# Synchronní vs asynchroní programování
+## Synchronní programování
++ Funkce se spouští postupně, každá funkce musí být dokončena než začne následující
+### Pro lepší představení:
 *zavolání funkcí*  
 funkce1 🔒  
 funkce2 🔒  
 funkce3 🔒  
 
 *krok 1*  
-funkce1 🕐  
+funkce1 ▶️  
 funkce2 🔒  
 funkce3 🔒  
 
 *krok 2*  
 funkce1 ✔️  
-funkce2 🕐  
+funkce2 ▶️  
 funkce3 🔒  
 
 *krok 3*  
 funkce1 ✔️  
 funkce2 ✔️  
-funkce3 🕐  
+funkce3 ▶️  
 
 *krok 4*  
 funkce1 ✔️  
@@ -49,6 +49,26 @@ funkce2 ✔️
 funkce3 ✔️  
 
 **funkce1** **->** **funkce2** **->** **funkce3**
+
+## Asynchronní programování
++ Funkce se spouští dle volného prostoru (spustí se jedna a pokud je prostor spustí se jiná)
+### Pro lepší pochopení:
+
+*krok 1*
+funkce1 ▶️  
+funkce2 🔒  
+
+*krok 2*
+funkce1 🕐  
+funkce2 ▶️  
+
+*krok 3*
+funkce1 ▶️  
+funkce2 ✔️ 
+
+*krok 4*
+funkce1 ✔️  
+funkce2 ✔️ 
 
 # Multithreading/vícevláknové programování
 + Funkce se spouští najednou (nečekají než se vykonají ostatní)
@@ -61,6 +81,3 @@ funkce3 ✔️
 
 
 **->** **spouštění** **všech** **funkcí/procedur** **najednou** **a** **snaha** **o** **dokončení** **všech** **najednou**
-
-# Asynchronní programování
-+ Funkce se spouští dle volného prostoru (vždy se spustí jedna a pokud je prostor spustí se jiná)
