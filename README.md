@@ -361,4 +361,10 @@ asyncio.run(main())
 | asyncio.gather() | shromáždí více asynchronních funkcí a spouští je automaticky do dokončení dle volného časového prostoru |
 | asyncio.sleep() | simulace I/O operace - tj. čekání |
 
+kdy použít **gather()**:  
+*Při spuštění několika asynchronních funkcích, kde je potřeba počkat než se všechny funkce dokonají (asynchronně)*  
+
+kdy použít **create_task a vlastní načasování await**  
+*Při nutnosti větší kontroly nad jednotlivými úlohami, jejichž dokončení může být flexibilnější*
+
 # Cvičení
