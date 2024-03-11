@@ -84,11 +84,11 @@ funkce2 ✔️
 | kroky | CPU: Thread1       |
 |------------|------------|
 | 1 | funkce1 ▶️ |
-| 1 | funkce2 🔒 |
+|  | funkce2 🔒 |
 | 2 | funkce1 ✔️ |
-| 2 | funkce2 ▶️ |
+|  | funkce2 ▶️ |
 | 3 | funkce1 ✔️ |
-| 3 | funkce2 ✔️ |
+|  | funkce2 ✔️ |
 
 ## multi-thread
 + funkce jsou rozdělený do určitého počtu vláken tj. jedno vlákno spouští x funkcí, druhé vlákno spouští y funkcí, ....
