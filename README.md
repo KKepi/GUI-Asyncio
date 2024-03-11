@@ -142,6 +142,8 @@ Asynchronní programování nejčastěji využíváme při I/O operacích. Tyto 
 
 vytvoříme asynchronní funkci a spustíme ji 
 ```
+import asyncio
+
 async def main():
   print("A")
   await asyncio.sleep(1)
@@ -152,6 +154,8 @@ asyncio.run(main())
 ### 3)
 Prodleva mezi vypsáním "A" a "B" je znatelná. Co kdybychom tuhle prodlevu (v praxi čekání na odpoveď během které program stojí a nic nedělá) využili k vykonání jiné funkce.  pojďme tedy vytvořit další asynchronní funkci, která toto místo vyplní.
 ```
+import asyncio
+
 async def main():
   print("A")
   await vyplnujici_funkce()
@@ -171,6 +175,40 @@ Toto vynucení je, ale velmi podobné synchronnímu programování, kde prostě 
 
 Pojďme tedy, využívat volného prostoru v rámci času a využijme tak opravdové asynchronní programování.
 ```
+import asyncio
 
+async def main():
+  task = asyncio.create_task(vyplnujici_funkce()) # připravíme funkci, která se případně spustí, aby vyplnila volný časový prostor
+  print("A")
+  print("B")
+
+async def vyplnujici_funkce():
+  print("1")
+  await asyncio.sleep(2)
+  print("2")
+
+asyncio.run(main())
+```
+### 5)
+Po spuštění funkce "*main()*" jsme zjistili, že v ní existuje volný časový prostor až na konci funkce tj. po vykonání poslední operace (print("B")).  
+Následně se spustila vyplňující funkce, která ale nedoběhla celá - existuje v ní volný prostor (asyncio.sleep()) a to se hlavní funkci nelíbí.  
+  
+Jestliže chceme, aby hlavní funkce na vyplňující funkci i tak počkala můžeme přidat příkaz "*await task*"
+```
+import asyncio
+
+async def main():
+  task = asyncio.create_task(vyplnujici_funkce()) # připravíme funkci, která se případně spustí, aby vyplnila volný časový prostor
+  print("A")
+  print("B")
+  await task
+
+async def vyplnujici_funkce():
+  print("1")
+  await asyncio.sleep(2)
+  print("2")
+
+asyncio.run(main())
+```
 
 
