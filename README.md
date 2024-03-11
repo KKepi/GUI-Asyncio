@@ -314,7 +314,7 @@ async def vyplnujici_funkce2():
 asyncio.run(main())
 ```
 ### 10)
-Pokud bychom chtěli spouštět více vyplňujících funkcích, ale jen v případě, že na ně bude prostor, můžeme toto shromaždění (gather) zaobalit v nove funkci
+Pokud bychom chtěli spouštět více vyplňujících funkcích, ale jen v případě, že na ně bude prostor vzhledem k dění v hlavní funkci, můžeme toto shromaždění (gather) zaobalit v nove funkci.
 ```
 import asyncio
 
@@ -339,7 +339,9 @@ async def spustit_vse():
 # Vytvoření úlohy pro spuštění obou funkcí paralelně
 async def main():
     task = asyncio.create_task(spustit_vse())
-    await task
+    print("A")
+    await asyncio.sleep(5)
+    print("B")
 
 asyncio.run(main())
 ```
