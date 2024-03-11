@@ -54,19 +54,19 @@ funkce3 ✔️
 + Funkce se spouští dle volného prostoru (spustí se jedna a pokud je prostor spustí se jiná)
 ### Pro lepší pochopení:
 
-*krok 1*
+*krok 1*  
 funkce1 ▶️  
 funkce2 🔒  
 
-*krok 2*
+*krok 2*  
 funkce1 🕐  
 funkce2 ▶️  
 
-*krok 3*
+*krok 3*  
 funkce1 ▶️  
 funkce2 ✔️ 
 
-*krok 4*
+*krok 4*  
 funkce1 ✔️  
 funkce2 ✔️ 
 
