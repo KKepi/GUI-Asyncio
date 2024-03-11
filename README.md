@@ -313,3 +313,33 @@ async def vyplnujici_funkce2():
 
 asyncio.run(main())
 ```
+### 10)
+Pokud bychom chtěli spouštět více vyplňujících funkcích, ale jen v případě, že na ně bude prostor, můžeme toto shromaždění (gather) zaobalit v nove funkci
+```
+import asyncio
+
+# Definice dvou asynchronních funkcí
+async def vyplnujici_funkce1():
+    print("Funkce 1 začíná")
+    await asyncio.sleep(2)
+    print("Funkce 1 končí")
+    return "Výsledek 1"
+
+async def vyplnujici_funkce2():
+    print("Funkce 2 začíná")
+    await asyncio.sleep(1)
+    print("Funkce 2 končí")
+    return "Výsledek 2"
+
+# Asynchronní funkce, která spustí funkce1 a funkce2 paralelně
+async def spustit_vse():
+    vysledek = await asyncio.gather(vyplnujici_funkce1(), vyplnujici_funkce2())
+    print(f"Spustit vše: {vysledek}")
+
+# Vytvoření úlohy pro spuštění obou funkcí paralelně
+async def main():
+    task = asyncio.create_task(spustit_vse())
+    await task
+
+asyncio.run(main())
+```
