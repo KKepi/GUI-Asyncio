@@ -19,7 +19,10 @@ funkce1()
 funkce2()
 funkce3()
 ```
-# Synchronní vs asynchroní programování -> způsob vykonávání kódu
+# Způsob vykonávání kódu
++ Synchronní programování
++ Asynchronní programování
+
 ## Synchronní programování
 + Funkce se spouští postupně, každá funkce musí být dokončena než začne následující
 ### Pro lepší představení:
@@ -70,7 +73,7 @@ funkce2 ✔️
 funkce1 ✔️  
 funkce2 ✔️ 
 
-# Vlákna a procesy -> způsob spouštění kódu
+# způsob spouštění kódu
 + váže se na hardware
 
 + single-thread
