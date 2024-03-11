@@ -370,7 +370,7 @@ kdy použít **create_task a vlastní načasování await**:
 # Cvičení
 
 ## 1) Asynchronní sběr dat
->Vytvořte 3 asynchronní funkce, které simulují stahování dat z různých zdrojů (vstupními parametry funkce bude tedy: název zdroje: str, doba stahování: int).  
+>Vytvořte 3 asynchronní funkce, které simulují stahování dat z různých zdrojů (parametry funkce jsou: název zdroje: str, doba stahování: int).  
 >Následně tyto asynchronní funkce parálélně spusťte.  
 >+ doba stahování pro každý zdroj by měla být jiná
 >+ hromadné spuštění uskutečnětě pomocí nástroje gather()
