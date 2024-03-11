@@ -81,8 +81,15 @@ funkce2 ✔️
 + všechny funkce se spouští v rámci jednoho vlákna 'kontextu'
 + typicky pro synchronní ale i asynchronní model
 
-| CPU | Thread       | funkce1 ▶️       | funkce1 ✔️       | funkce2 ▶️       | funkce1 ✔️       |
-|------------|------------|------------|------------|------------|------------|
+| kroky | CPU       |
+|------------|------------|
+| ... | Thread1       |
+| 1 | funkce1 ▶️ |
+| 1 | funkce2 🔒 |
+| 2 | funkce1 ✔️ |
+| 2 | funkce2 ▶️ |
+| 3 | funkce1 ✔️ |
+| 3 | funkce2 ✔️ |
 
 ## multi-thread
 + funkce jsou rozdělený do určitého počtu vláken tj. jedno vlákno spouští x funkcí, druhé vlákno spouští y funkcí, ....
