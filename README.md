@@ -19,7 +19,7 @@ funkce1()
 funkce2()
 funkce3()
 ```
-# Způsob vykonávání kódu
+# Vykonávání kódu
 + Synchronní programování
 + Asynchronní programování
 
@@ -73,7 +73,7 @@ funkce2 ✔️
 funkce1 ✔️  
 funkce2 ✔️ 
 
-# Způsob spouštění kódu
+# Spouštění kódu
 + váže se na hardware
 
 + single-thread
