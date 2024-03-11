@@ -303,7 +303,7 @@ async def main():
 
 async def vyplnujici_funkce1():
   print("1")
-  await asyncio.sleep(2)
+  await asyncio.sleep(3)
   print("2")
 
 async def vyplnujici_funkce2():
