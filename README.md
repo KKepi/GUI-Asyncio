@@ -271,8 +271,8 @@ asyncio.run(main())
 ```
 ### 8)
 + Pokud chceme, aby vyplňující funkce vracela nějakou hodnotu použijeme příkaz "*await task*"  
-! Tento přikaz použijeme jen když jsme si jisti, že vyplňující funkce byla již dokončena !  
-! Pokud vyplňující funkce ještě nebyla dokončena tento příkaz vynutí spuštění vyplňující funkce a bude na ni čekat nehledě na volný časový prostor !  
+> ! Tento přikaz použijeme jen když jsme si jisti, že vyplňující funkce byla již dokončena !  
+> ! Pokud vyplňující funkce ještě nebyla dokončena tento příkaz vynutí spuštění vyplňující funkce a bude na ni čekat nehledě na volný časový prostor !  
 ```
 import asyncio
 
