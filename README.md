@@ -83,7 +83,7 @@ funkce2 ✔️
 
 | kroky | CPU       | ...       |
 |------------|------------|------------|
-| ... | CPU       | ...       |
+| ... | CPU       | CPU       |
 | 1 | funkce1 ▶️ | funkce2 🔒 |
 | 2 | funkce1 ✔️ | funkce2 ▶️ |
 | 3 | funkce1 ✔️ | funkce2 ✔️ |
