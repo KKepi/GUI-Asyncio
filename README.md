@@ -296,7 +296,6 @@ Ten nám tasky rozloží a bude je spouštět dle volného časového prostoru
 import asyncio
 
 async def main():
-  ~~task = asyncio.create_task(vyplnujici_funkce())~~
   await asyncio.gather(
     vyplnujici_funkce1()
     vyplnujici_funkce2()
