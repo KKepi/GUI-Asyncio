@@ -290,7 +290,9 @@ async def vyplnujici_funkce():
 asyncio.run(main())
 ```
 ### 9)
-V případě, že máme více vyplňujících funkcí (tasků), které chceme pustit "současně" tj. zahájení je současné (doopravdy se vykonává funkce pro kterou je časový prostor - !nejedná se o multi-thread nebo multi-process!) využijeme nástroje "*gather(funkce1,funkce2,funkce3, ....)*"  
+V případě, že máme více vyplňujících funkcí (tasků), které chceme pustit "současně" tj. zahájení je současné (doopravdy se vykonává funkce pro kterou je časový prostor - !nejedná se o multi-thread nebo multi-process! využijeme nástroje "*gather(funkce1,funkce2,funkce3, ....)*"  
+await asyncio.gather(x,y) se postará o to, aby se funkce *x,y* spustily a počká než se všechny dokončí.
+
 Ten nám tasky shromáždí a bude je spouštět dle volného časového prostoru -> horší manévrování, ale stejná podstata předešlých úkolů
 ```
 import asyncio
