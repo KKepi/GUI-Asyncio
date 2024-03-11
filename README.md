@@ -364,7 +364,7 @@ asyncio.run(main())
 kdy použít **gather()**:  
 *Při spuštění několika asynchronních funkcích, kde je potřeba počkat než se všechny funkce dokonají (asynchronně)*  
 
-kdy použít **create_task a vlastní načasování await**  
+kdy použít **create_task a vlastní načasování await**:  
 *Při nutnosti větší kontroly nad jednotlivými úlohami, jejichž dokončení může být flexibilnější*
 
 # Cvičení
