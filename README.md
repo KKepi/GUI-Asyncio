@@ -289,3 +289,28 @@ async def vyplnujici_funkce():
 
 asyncio.run(main())
 ```
+### 9)
+V případě, že máme více vyplňujících funkcí (tasků) využijeme nástroje "*gather(funkce1,funkce2,funkce3, ....)*"  
+Ten nám tasky rozloží a bude je spouštět dle volného časového prostoru
+```
+import asyncio
+
+async def main():
+  ~~task = asyncio.create_task(vyplnujici_funkce())~~
+  await asyncio.gather(
+    vyplnujici_funkce1()
+    vyplnujici_funkce2()
+  )
+
+async def vyplnujici_funkce1():
+  print("1")
+  await asyncio.sleep(2)
+  print("2")
+
+async def vyplnujici_funkce2():
+  print("3")
+  await asyncio.sleep(1)
+  print("4")
+
+asyncio.run(main())
+```
