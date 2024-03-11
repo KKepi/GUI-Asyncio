@@ -350,7 +350,7 @@ async def main():
 asyncio.run(main())
 ```
 
-## Souhrn
+## Souhrn příkazů
 
 | příkaz | popis       |
 |------------|------------|
