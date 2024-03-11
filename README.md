@@ -349,4 +349,13 @@ asyncio.run(main())
 
 ## Souhrn
 
+| příkaz | popis       |
+|------------|------------|
+| async def | Definuje asynchronní funkci |
+| await | Čeká na dokončení asynchronní funkce, umožňuje jiným úlohám běžet (simulovat I/O operaci) |
+| asyncio.run() | Spustí hlavní asynchronní funkci - coroutine |
+| asyncio.create_task() | vytvoří funkci, která bude vykonávána paralélně tj. až na ni bude volný časový prostor |
+| asyncio.gather() | shromáždí více asynchronních funkcí a spouští je automaticky do dokončení dle volného časového prostoru |
+| asyncio.sleep() | simulace I/O operace - tj. čekání |
+
 # Cvičení
