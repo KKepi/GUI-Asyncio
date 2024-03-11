@@ -105,8 +105,9 @@ funkce2 ✔️
 
 ## multi-thread
 + funkce jsou rozdělený do určitého počtu vláken tj. jedno vlákno spouští x funkcí, druhé vlákno spouští y funkcí, ....
-+ funkce se mohou spouštět paralélně (najednou)
++ funkce se mohou spouštět paralélně (najednou)  
 **! správa vláken a synchronizace mezi nimi**
+**! Společný paměťový prostor!**
 
 | kroky | CPU       | ...       |
 |------------|------------|------------|
@@ -117,7 +118,8 @@ funkce2 ✔️
 
 ## multi-process
 + podobné multi-thread
-+ místo vláken využívá procesy, tj. využívá jádra procesoru
++ místo vláken využívá procesy, tj. využívá jádra procesoru  
+**každý proces má svůj paměťový prostor**
 
 | kroky | CPU       | ...       |
 |------------|------------|------------|
