@@ -290,8 +290,8 @@ async def vyplnujici_funkce():
 asyncio.run(main())
 ```
 ### 9)
-V případě, že máme více vyplňujících funkcí (tasků) využijeme nástroje "*gather(funkce1,funkce2,funkce3, ....)*"  
-Ten nám tasky rozloží a bude je spouštět dle volného časového prostoru
+V případě, že máme více vyplňujících funkcí (tasků), které chceme pustit "současně" tj. zahájení je současné (doopravdy se vykonává funkce pro kterou je časový prostor - !nejedná se o multi-thread nebo multi-process!) využijeme nástroje "*gather(funkce1,funkce2,funkce3, ....)*"  
+Ten nám tasky shromáždí a bude je spouštět dle volného časového prostoru -> horší manévrování, ale stejná podstata předešlých úkolů
 ```
 import asyncio
 
@@ -314,7 +314,8 @@ async def vyplnujici_funkce2():
 asyncio.run(main())
 ```
 ### 10)
-Pokud bychom chtěli spouštět více vyplňujících funkcích, ale jen v případě, že na ně bude prostor vzhledem k dění v hlavní funkci, můžeme toto shromaždění (gather) zaobalit v nove funkci.
+Pokud bychom chtěli spouštět více vyplňujících funkcích, ale jen v případě, že na ně bude prostor vzhledem k dění v hlavní funkci, můžeme toto shromaždění (gather) zaobalit v nove funkci.  
+-> lepší manévrování než v předešlém kroku
 ```
 import asyncio
 
@@ -345,5 +346,7 @@ async def main():
 
 asyncio.run(main())
 ```
+
+## Souhrn
 
 # Cvičení
