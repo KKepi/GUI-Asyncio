@@ -73,7 +73,7 @@ funkce2 ✔️
 funkce1 ✔️  
 funkce2 ✔️ 
 
-# způsob spouštění kódu
+# Způsob spouštění kódu
 + váže se na hardware
 
 + single-thread
