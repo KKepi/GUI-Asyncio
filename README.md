@@ -280,7 +280,7 @@ async def main():
   print("A")
   await asyncio.sleep(5) # vytvoreni dostatecne velkeho casoveho prostoru pro spusteni tasku
   print("B")
-  hodnota = await task
+  hodnota = await task # jsme si jisti, že funkce task (vyplnujici funkce) jiz probehla. Pokud by neprobehla vynutili bychom jeji spusteni.
 
 async def vyplnujici_funkce():
   print("1")
