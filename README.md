@@ -173,7 +173,8 @@ asyncio.run(main())
 + Pomocí příkazu "*await*" jsme vynutili spuštění vyplňující funkce - program ale čekal na dokončení vyplňující funkce i přesto, že se v ní nachází volný prostor (asyncio.sleep(2)).   
 + Toto vynucení je, ale velmi podobné synchronnímu programování, kde prostě během výpisu spustíme jinou funkci - tj. nevyužíváme volného prostoru (čas).
 
-Pojďme tedy, využívat volného prostoru v rámci času a využijme tak opravdové asynchronní programování.
+Pojďme tedy, využívat volného prostoru v rámci času a využijme tak opravdové asynchronní programování.  
+Toho dosáhneme pokud v prostředí připravíme task, ten obsahuje funkci, která se spustí jestliže na spuštění bude volný časový prostor.
 ```
 import asyncio
 
