@@ -289,6 +289,8 @@ async def vyplnujici_funkce():
   await asyncio.sleep(2)
   print("2")
 
+  return "HOTOVO"
+
 asyncio.run(main())
 ```
 ### 3.9)
