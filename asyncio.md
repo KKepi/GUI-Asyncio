@@ -23,6 +23,12 @@ Pro lepší představu jsem vytvořil diagram.
 
 # 2) Synchronní a asynchronní programování je to jak se softwarově spouští kód v interpreteru. 
 Co se týče fyzického spouštění můžeme způsoby klasifikovat na 3 kategorie dle toho jak probíhá spouštění kódu vzhledem k hardwaru.
+### multi-thread  
+1 jádro CPUčka řídí více vláken v kterých běží různé funkce, kde tyhle vlákna běží paralélně - najednou  
+
+### multi-process  
+více jáder v kterých běží libovolný počet vláken v kterých běží různé funkce, kde tyhle jádra a vlákna běží paralélně najednou
+
 
 # 3)
 3.1) 
