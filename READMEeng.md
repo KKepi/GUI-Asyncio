@@ -6,19 +6,6 @@ pip install asyncio
 ```
 
 ## Programming Principles within Synchronization
-```
-def function1():
-  ....
-def function2():
-  ....
-def function3():
-  ....
-```
-```
-function1()
-function2()
-function3()
-```
 # 1) Code Execution
 + Synchronous programming
 + Asynchronous programming
