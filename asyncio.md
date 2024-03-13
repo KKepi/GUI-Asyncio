@@ -1,4 +1,4 @@
-# Rád bych vám představil knihovnu AsyncIO, která nám poskytuje nástroje, díky kterým můžeme asynchronně programovat.
+#  knihovnu AsyncIO, která nám poskytuje nástroje, díky kterým můžeme asynchronně programovat.
 -> Z názvu si můžete všimnout posledních 2 písmen - IO, což je zkratka pro I/O neboli input a output. 
 Jedná se o situaci během které dochází k vnější komunikaci mezi interpreterem a jiným systémem. Klient představuje input tj. požadavek
 během kterého čeká na output (odpověď) od serveru. Ve všedním synchronním programováním by program během čekání na odpověď stál a nic nevykonával.  
