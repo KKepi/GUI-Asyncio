@@ -251,7 +251,7 @@ async def vyplnujici_funkce():
 
 asyncio.run(main()
 ```
-### 3.7)
+### 3.8)
 + Pořád, ale neelegantně vynucujeme časový prostor a nevyužíváme "samovolné" asynchronní spouštění těchto funkcí.  
 + Pojďme vytvořit scénář, kde žádne vynucování neexistuje a funkce se spouští číste vzhledem k volnému časovému prostoru.
 ```
@@ -270,7 +270,7 @@ async def vyplnujici_funkce():
 
 asyncio.run(main())
 ```
-### 3.8)
+### 3.9)
 + Pokud chceme, aby vyplňující funkce vracela nějakou hodnotu použijeme příkaz "*await task*"  
 > ! Tento přikaz použijeme jen když jsme si jisti, že vyplňující funkce byla již dokončena !  
 > ! Pokud vyplňující funkce ještě nebyla dokončena tento příkaz vynutí spuštění vyplňující funkce a bude na ni čekat nehledě na volný časový prostor !  
@@ -293,7 +293,7 @@ async def vyplnujici_funkce():
 
 asyncio.run(main())
 ```
-### 3.9)
+### 3.10)
 + V případě, že máme více vyplňujících funkcí (tasků), které chceme pustit "současně" tj. zahájení je současné (doopravdy se vykonává funkce pro kterou je časový prostor - !nejedná se o multi-thread nebo multi-process! využijeme nástroje "*gather(funkce1,funkce2,funkce3, ....)*"  
 + await asyncio.gather(x,y) se postará o to, aby se funkce *x,y* spustily a počká než se všechny dokončí.
 
@@ -319,7 +319,7 @@ async def vyplnujici_funkce2():
 
 asyncio.run(main())
 ```
-### 3.10)
+### 3.11)
 + Pokud bychom chtěli spouštět více vyplňujících funkcích, ale jen v případě, že na ně bude prostor vzhledem k dění v hlavní funkci, můžeme toto shromaždění (gather) zaobalit v nove funkci.  
 -> lepší manévrování než v předešlém kroku
 ```
