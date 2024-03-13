@@ -32,13 +32,50 @@ více jáder v kterých běží libovolný počet vláken v kterých běží rů
 
 
 # 3)
-3.1) 
-3.2)
-3.3)
+3.1) importujeme asyncio  
+3.2)  
++ Asynchronní programování nejčastěji využíváme při I/O operacích. Tyto operace (čekání na odpověď serveru) budeme simulovat pomocí příkazu ''*await asyncio.sleep(x)*'', kde x představuje čas.
+
+vytvoříme asynchronní funkci a spustíme ji  
+3.3)  
++ Prodleva mezi vypsáním "A" a "B" je znatelná. Co kdybychom tuhle prodlevu (v praxi čekání na odpoveď během které program stojí a nic nedělá) využili k vykonání jiné funkce.  pojďme tedy vytvořit další asynchronní funkci, která toto místo vyplní.  
 3.4)
-3.5)
-3.6)
-3.7)
++ Zdá se vám toto jako asynchronní spuštění? - Ne.   
++ Pomocí příkazu "*await*" jsme vynutili spuštění vyplňující funkce - program ale čekal na dokončení vyplňující funkce i přesto, že se v ní nachází volný prostor (asyncio.sleep(2)).   
++ Toto vynucení je, ale velmi podobné synchronnímu programování, kde prostě během výpisu spustíme jinou funkci - tj. nevyužíváme volného prostoru (čas).
+
+Pojďme tedy, využívat volného prostoru v rámci času a využijme tak opravdové asynchronní programování.  
+Toho dosáhneme pokud v prostředí připravíme task, ten obsahuje funkci, která se spustí jestliže na spuštění bude volný časový prostor.  
+
+3.5)  
++ Po spuštění funkce "*main()*" jsme zjistili, že v ní existuje volný časový prostor až na konci funkce tj. po vykonání poslední operace (print("B")).  
++ Následně se spustila vyplňující funkce, která ale nedoběhla celá - existuje v ní volný prostor (asyncio.sleep()) a to se hlavní funkci nelíbí.  
+  
++ Jestliže chceme, aby hlavní funkce na vyplňující funkci i tak počkala můžeme přidat příkaz "*await task*".  
++ Tento příkaz se postará o to, aby si vyplňující funkce našla alespoň jeden prostor na spuštění - typicky na konci hlavní funkce
+
+3.6)  
++ Názornějším scénářem nám bude situace, kde je časový prostor na spuštění alespoň části vyplňující funkce.
+ 
+(main.sleep < vyplnujici_funkce.sleep)  
+
+3.7)  
++ Pojďme hlavní funkci požádat o pokračování vyplnujici funkce ve více časových prostorech tj. využití sleep() a prostoru na konci hlavní funkce.  
 3.8)
-3.9)
-3.10)
++ Pořád, ale neelegantně vynucujeme časový prostor a nevyužíváme "samovolné" asynchronní spouštění těchto funkcí.  
++ Pojďme vytvořit scénář, kde žádne vynucování neexistuje a funkce se spouští číste vzhledem k volnému časovému prostoru.
+
+3.9)  
++ Pokud chceme, aby vyplňující funkce vracela nějakou hodnotu použijeme příkaz "*await task*"  
+> ! Tento přikaz použijeme jen když jsme si jisti, že vyplňující funkce byla již dokončena !  
+> ! Pokud vyplňující funkce ještě nebyla dokončena tento příkaz vynutí spuštění vyplňující funkce a bude na ni čekat nehledě na volný časový prostor !
+
+3.10)  
++ V případě, že máme více vyplňujících funkcí (tasků), které chceme pustit "současně" tj. zahájení je současné (doopravdy se vykonává funkce pro kterou je časový prostor - !nejedná se o multi-thread nebo multi-process! využijeme nástroje "*gather(funkce1,funkce2,funkce3, ....)*"  
++ await asyncio.gather(x,y) se postará o to, aby se funkce *x,y* spustily a počká než se všechny dokončí.
+
+Ten nám tasky shromáždí a bude je spouštět dle volného časového prostoru -> horší manévrování, ale stejná podstata předešlých úkolů  
+
+3.11)  
++ Pokud bychom chtěli spouštět více vyplňujících funkcích, ale jen v případě, že na ně bude prostor vzhledem k dění v hlavní funkci, můžeme toto shromaždění (gather) zaobalit v nove funkci.  
+-> lepší manévrování než v předešlém kroku
