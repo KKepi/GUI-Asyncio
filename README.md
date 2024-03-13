@@ -5,20 +5,6 @@
 ```
 pip install asyncio
 ```
-## Principy programování v rámci synchronizace
-```
-def funkce1():
-  ....
-def funkce2():
-  ....
-def funkce3():
-  ....
-```
-```
-funkce1()
-funkce2()
-funkce3()
-```
 # 1) Vykonávání kódu
 + Synchronní programování
 + Asynchronní programování
