@@ -21,8 +21,8 @@ U Asynchronního programování se taky spouští jen jedna funkce, ale výhodou
 Tento volný prostor je chápán ve smyslu času. To znamená, že pokud je spuštěna nějaká funkce a zrovna čeká na odpověď typicky z nějakého externího zdroje spustí se mezi tím jiná funkce.
 Pro lepší představu jsem vytvořil diagram.
 
-# 2) Doteď jsme se bavili o softwarové části, která byla čistě myšlenková. 
-Fyzicky by se téma spojené s asynchronním programování dalo klasifikovat na 3 kategorie dle toho jak probíhá spouštění kódu vzhledem k hardwaru.
+# 2) Synchronní a asynchronní programování je to jak se softwarově spouští kód v interpreteru. 
+Co se týče fyzického spouštění můžeme způsoby klasifikovat na 3 kategorie dle toho jak probíhá spouštění kódu vzhledem k hardwaru.
 
 # 3)
 3.1) 
