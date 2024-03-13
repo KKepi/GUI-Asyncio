@@ -7,6 +7,8 @@ To je z časového hlediska nepraktické a proto přichází na stage asynchronn
 
 Dnes se tedy naučíme jak pomocí knihovny asyncio vykonávat více funkcí paralélně, kde se běh funkcí bude střídat dle volného časového prostoru.
 
+středobodem synchronního a asynchronního programování je interpreter  
+
 # 1) Pythonovský interpreter má GIL - global interpreter lock - a ten má právě nevýhody, kvůli kterým je použití více-vláknového programování problematický.
 GIL je zámek, který se stará o to, aby se náš kód v interpreteru vykonával jen v jednom vlákně (threadu). Kvůli tomu dokážou být procesy zdlouhavý. Bohužel je teda v pythonu opravdový více-vláknový programování nemožné. Některý knihovny se snaží tenhle proces obejít tím, že pomocí jednoho vlákna pouští střídavě více "pseudo-vláken". Efektivnější ještě může být multi-processing, kde se vlastně spouští více python interpreterů najednou. My budeme dneska používat asyncio, asynchronní programování, který pracuje s jedním vláknem. Jeho efektivita spočívá v tom, že se s ostatníma funkcema o volný časový prostor střídá.
 
