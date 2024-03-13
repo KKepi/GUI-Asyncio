@@ -4,8 +4,6 @@
 ```
 pip install asyncio
 ```
-
-## Programming Principles within Synchronization
 # 1) Code Execution
 + Synchronous programming
 + Asynchronous programming
