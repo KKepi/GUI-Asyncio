@@ -1,12 +1,13 @@
 # Rád bych vám představil knihovnu AsyncIO, která nám poskytuje nástroje, díky kterým můžeme asynchronně programovat.
 -> Z názvu si můžete všimnout posledních 2 písmen - IO, což je zkratka pro I/O neboli input a output. 
 Jedná se o situaci během které dochází k vnější komunikaci mezi interpreterem a jiným systémem. Klient představuje input tj. požadavek
-během kterého čeká na output (odpověď) od serveru. Ve všedním synchronním programováním program by program během čekání na odpověď stál a nic nevykonával.
+během kterého čeká na output (odpověď) od serveru. Ve všedním synchronním programováním by program během čekání na odpověď stál a nic nevykonával.  
 To je z časového hlediska nepraktické a proto přichází na stage asynchronní programování, které nabízí možnost během čekání vykonávat jinou funkci.
+-> alternativně bychom to mohli vyřešit pomocí využití více vláken nebo více procesů, což je ale v pythonu problematický.  
 
 Dnes se tedy naučíme jak pomocí knihovny asyncio vykonávat více funkcí paralélně, kde se běh funkcí bude střídat dle volného časového prostoru.
 
-# 1) GIL a nevýhody
+# 1) Pythonovský interpreter má GIL - global interpreter lock - a ten má právě nevýhody, kvůli kterým je použití více-vláknového programování problematický.
 GIL je zámek, který se stará o to, aby se náš kód v interpreteru vykonával jen v jednom vlákně (threadu). Kvůli tomu dokážou být procesy zdlouhavý. Bohužel je teda v pythonu opravdový více-vláknový programování nemožné. Některý knihovny se snaží tenhle proces obejít tím, že pomocí jednoho vlákna pouští střídavě více "pseudo-vláken". Efektivnější ještě může být multi-processing, kde se vlastně spouští více python interpreterů najednou. My budeme dneska používat asyncio, asynchronní programování, který pracuje s jedním vláknem. Jeho efektivita spočívá v tom, že se s ostatníma funkcema o volný časový prostor střídá.
 
 V podstatě jde o algoritmus jakým lze efektivně obejít nevýhody global interpreter locku, který přistupuje k řádkům kódu.
