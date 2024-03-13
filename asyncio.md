@@ -7,17 +7,18 @@ To je z časového hlediska nepraktické a proto přichází na stage asynchronn
 Dnes se tedy naučíme jak pomocí knihovny asyncio vykonávat více funkcí paralélně, kde se běh funkcí bude střídat dle volného časového prostoru.
 
 # 1) GIL a nevýhody
-GIL je zámek, který se stará o to, aby se náš kód v interpreteru vykonával jen v jednom vlákně (threadu). Kvůli tomu dokážou být procesy zdlouhavý. Bohužel je teda v pythonu opravdový více-vláknový programování nemožné. Některý knihovny se snaží tenhle proces obejít tím, že pomocí jednoho vlákna pouští střídavě více "pseudo-vláken". Efektivnější ještě může být multi-processing, kde se vlastně spouští více python interpreterů najednou. My budeme dneska používat asyncio, který pracuje s jedním vláknem. Jeho efektivita spočívá v tom, že se s ostatníma funkcema o volný časový prostor střídá.
+GIL je zámek, který se stará o to, aby se náš kód v interpreteru vykonával jen v jednom vlákně (threadu). Kvůli tomu dokážou být procesy zdlouhavý. Bohužel je teda v pythonu opravdový více-vláknový programování nemožné. Některý knihovny se snaží tenhle proces obejít tím, že pomocí jednoho vlákna pouští střídavě více "pseudo-vláken". Efektivnější ještě může být multi-processing, kde se vlastně spouští více python interpreterů najednou. My budeme dneska používat asyncio, asynchronní programování, který pracuje s jedním vláknem. Jeho efektivita spočívá v tom, že se s ostatníma funkcema o volný časový prostor střídá.
 
 V podstatě jde o algoritmus jakým lze efektivně obejít nevýhody global interpreter locku, který přistupuje k řádkům kódu.
+
+Synchronní, asynchronní, multi-thread, multi-process....?
 
 Synchronní programování je nám velmi známé a mnozí z nás pracovali doposud jen s ním. 
 Jeho podstatou je, že se funkce spouští postupně dle řádku a každá funkce musí být dokončena než začne další.
 Pro lepší představu jsem vytvořil diagram.
 
-Asynchronní programování je v podstatě stejné, ale funkce o sobě navzájem ví a střídají se dle volného prostoru.
-Tento volný prostor je chápán ve smyslu času. To znamená, že pokud je spuštěna nějaká funkce a zrovna čeká na odpověď z nějakého externího zdroje
-spustí se mezi tím jiná funkce.
+U Asynchronního programování se taky spouští jen jedna funkce, ale výhodou je, že funkce o sobě navzájem ví a střídají se dle volného prostoru.
+Tento volný prostor je chápán ve smyslu času. To znamená, že pokud je spuštěna nějaká funkce a zrovna čeká na odpověď typicky z nějakého externího zdroje spustí se mezi tím jiná funkce.
 Pro lepší představu jsem vytvořil diagram.
 
 # 2) Doteď jsme se bavili o softwarové části, která byla čistě myšlenková. 
